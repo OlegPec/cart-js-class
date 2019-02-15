@@ -1,0 +1,150 @@
+<html>
+<head>
+<script src="js/Kit.js"></script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/apps.css">
+</head>
+<body>
+<!--Пустое тело-->
+
+<script>
+    class Shop {
+        constructor(){
+            this.images = ["iphone8", "Default", "binocle", "Kastr", "Stakan", "Plastik"];
+					this.counts = this.images.length;
+            this.maxRandomNumImg = this.images.length - 1;
+            this.products = [];
+                      
+            this.max = 10000;
+            this.min = 5000
+            this.cart = [];
+            this.SetHtml();
+            this.SetProducts();
+        }
+        SetHtml() {
+            let container = $("div", this.margin);
+            let sum = $("div", 0, "id=sum", container);
+            $("output", 0, "id=rezultat", sum);
+            rezultat.innerHTML = 'Summa';
+
+            let tov = $("div", 0, "id=spisoktov", container);
+            $("output", 0, "id=spisok", tov);
+            spisok.innerHTML = 'Tovar';
+			
+            let tovar = $("div", "overflow=hidden;", "id=tovar;", '', 2);
+            $("output", 0, "id=tovars", tovar);
+			$("br");$("br");
+        }
+        Rand(min, max){
+            return Math.round((Math.random() * (max - min) + min));
+        }
+        SetProducts() {
+            for (let prod, i = 0; i < this.counts; i++)
+            {
+                this.imgrand = this.Rand(0, this.maxRandomNumImg);  
+                this.price = this.Rand(this.min, this.max);
+                this.nameImg = this.images[i];
+                this.nameP = this.nameImg;
+				let prod = new Product(this.nameImg, this.nameP, this.price, this.cart)
+                this.products.push(prod);
+                prod.InHtmlProd();
+            }
+        }
+    }
+	
+    class Product{
+        constructor(nameImg, nameP, price, cart)
+        {
+            this.nameImg = nameImg;
+            this.nameP = nameP;
+            this.price = price;
+			this.cart = cart;
+
+        }
+        InHtmlProd() {
+            let div = $("div", 0, "className=col-lg-4 col-md-4 col-sm-6 col-xs-12 mt-5", tovars);
+            let tov = $("div", "width=300px;margin=auto;", "id=Tov;", div);
+            let div2 = $("div", '', "className=img-hw200 m-auto", tov);
+            let iph = $("div", '', "id=iph", div2);
+            $("img", "width=100%", `src=Images/${this.nameImg}.png;`, iph);
+            let Names = $("div", 0, `className=text-left mt-3;`, tov);
+            Names.innerHTML=this.nameP;
+			let Price = $("div", "", `className=text-left;`, tov);
+            Price.innerHTML='Цена: '+this.price;
+           
+           	let btn = $("input", "", "type=button;value=Купить;", tov);
+						btn.onclick = () => this.Buy();
+
+        }
+		Buy()
+		{
+			let pc = new Cart(this.cart, this.nameP, this.price, 1);
+			pc.Add();
+		}
+    }
+	
+	class Cart{
+		constructor(cart, name, price, count){
+			this.OldItem = name;
+			this.carts = cart;
+			this.name = name;
+			this.price = price;
+			this.count = count;
+		}
+		item(){
+			let items = {name: this.name, price: this.price, count:this.count}
+			return items;
+		}
+		Add(){
+			
+			let resultObject = this.search(this.OldItem, this.carts);
+			if(resultObject !== true){
+				this.carts.push(this.item());				
+			}
+			else{
+				for (var i = 0; i < (this.carts.length); i++) {
+					if (this.carts[i].name === this.OldItem) {
+						this.carts[i].count += 1;
+						break;
+					}
+				}
+			}
+			this.InHtmlCart();
+		}
+		
+		InHtmlCart(){
+			let str = '<table class="Cart-list">';
+			let sum = 0;
+			for(var i = 0; i< this.carts.length; i++)
+			{
+				sum += this.carts[i].price * this.carts[i].count;
+				str += '<tr><td><span class="elem"><span class="remove" data-name="' + this.carts[i].name +'">×</span></span></td>' +
+						'<td>' + this.carts[i].name + '</td>' +
+						'<td>Количество: <span class="elem">' +
+						'<span class="down" data-name="' + this.carts[i].name +'">◄</span></span>' + this.carts[i].count +
+						'<span class="elem"><span class="up" data-name="' + this.carts[i].name +'">►</span></span></td>' +
+						'<td>Цена:&nbsp' + this.carts[i].price * this.carts[i].count + ' руб</td>';
+			}
+			str += '</table>';
+			
+			spisok.innerHTML = str;
+			rezultat.innerHTML = sum;
+		}
+		Reset(){
+			spisok.removeChild(this.table);
+		}
+		
+		
+		search(){
+			for (var i=0; i < this.carts.length; i++) {
+				if (this.carts[i].name === this.name) {
+					return true;
+				}
+			}
+		}
+	}
+    onload = () => new Shop();
+</script>
+</body>
+
+</html>

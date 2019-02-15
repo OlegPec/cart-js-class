@@ -1,0 +1,284 @@
+#top{
+ margin: 0px 0px 10px 0px;
+ padding:0;
+ width:986;
+ border-radius: 30px 30px 0px 0px;
+ border:2px dashed blue;
+ height:106px;
+ font:bold italic 400% serif;
+ font-family:Segoe script;
+}
+#kal{
+ margin: 0px 0px 0px 0px;
+ width:500px;
+ border:0px dashed blue;
+ padding: 10px 10px 10px 10px;
+ text-align: left;
+ float:left;
+ }
+#kal2{
+ margin: 0px 0px 0px 0px;
+ width:300px;
+ border:0px dashed blue;
+ padding: 10px 10px 10px 10px;
+ text-align: left;
+ float:left;
+ }
+#kont{
+ margin: 10px 0px 0px 0px;
+ width:966;
+ border-radius: 5px;
+ border:2px dashed blue;
+ padding: 10px 10px 10px 10px;
+ text-align: left;
+ background-color: lightblue;
+ float:left;
+}
+#menu{
+ margin:0px 0px 0px 0px;
+ width:990;
+ border:0px;
+ height: 30px;
+}
+#reg{
+ margin:0px 0px 0px 0px;
+ width:210px;
+ border-left: 2px dashed blue;
+ Clear:none;
+ float:left;
+ padding:0px 0px 0px 0px;
+ font:bold italic 12px serif
+}
+#e{
+ margin:0 auto;
+ width:990;
+ border:0px;
+}
+#f{
+ margin:10px 0px 0px 0px;
+ width:1020;
+ border:2px dashed red;
+ float:left;
+ box-shadow:0px 0px 10px 2px rgba(0,0,255,1);
+}
+#g{
+ margin:0 auto;
+ width:1025;
+ border:0px;
+}
+#avt{
+ margin:10px 0px 0px 0px;
+ width:1020;
+ text-align:center;
+ float:left;
+}
+
+td {
+ /*font-family:Segoe script;*/
+ font:bold italic 12px serif;
+ text-align:center;
+}
+#zag{
+ margin: 0px 0px 10px 0px;
+ padding:0;
+ width:772;
+ border: 0px dashed blue;
+ height:98px;
+ float: left;
+ font:bold italic 80px serif;
+ /*font-family:Segoe script;*/
+}
+/*#body_ul{
+ float: left;
+}*/
+ul summary { /* убрать рамку при фокусе */
+ outline: none;
+}
+
+
+.ul-block {
+ display: block;
+ margin: auto;
+ width: 900px;
+
+}
+.ul-block li {
+ display: inline-block;
+ vertical-align: top;
+ width: 405px;
+ padding-right: 30px;
+ padding-top: 30px;
+}
+.image_card {
+ margin: 0;
+ overflow: hidden;
+ position: relative;
+ height: 118px;
+ border-radius: 5px;
+}
+.padding {
+ margin: 15px 0 0 30px;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ display: -webkit-box;
+ -webkit-line-clamp: 3;
+ -webkit-box-orient: vertical;
+ box-sizing: border-box;
+}
+.li-mix a {
+ font-size: 1.20em;
+ font-weight: bold;
+ color: #333;
+    text-decoration: none;
+}
+
+#smallcart{
+ float:right;
+ position: absolute;
+
+ right: 0;
+ top: 0;
+
+ padding: 10px;
+ padding-left: 15px;
+ margin: 10px;
+ border: 1px solid gray;
+ border-radius: 10px;
+ -moz-border-radius: 10px;
+ -webkit-border-radius: 10px;
+ background: #d9dbea;
+}
+#spisoktov{
+ /*float : left;*/
+ margin-top: 10px;
+ margin-bottom: 10px;
+}
+/*#elem{
+ margin-bottom: 15px;
+}*/
+#oforml{
+  float: left;
+  margin-bottom: 15px;
+}
+#sum {
+ /*float : left;*/
+ margin-top: 20px;
+ margin-bottom: 10px;
+}
+.elem{
+ /*padding-right: 10px;*/
+ opacity: 0.3;
+ font-size: 20px;
+}
+.elem:hover {
+ opacity: 1;
+ cursor:pointer;
+}
+
+.Cart-list td {
+ /*font-family:Segoe script;*/
+ font:bold italic 15px serif;
+ text-align:left;
+ padding-right: 10px;
+ padding-bottom: 15px;
+}
+.Cart-list {
+  /*border-spacing: 15px;*/
+}
+.spec {
+ width: 200px;
+ height: 200px;
+ background: #005500;
+}
+/*span.deletes{
+ padding-right: 15px;
+ margin: 1px auto;
+ float: left;
+ opacity: 0.3;
+}
+.deletes:hover {
+ opacity: 1;
+}
+span.deletes:before, span.deletes:after {
+ position: absolute;
+ left: 15px;
+ content: '';
+ height: 13px;
+ width: 2px;
+ background-color: #333;
+}
+span.deletes:before {
+ transform: rotate(45deg);
+}
+span.deletes:after {
+ transform: rotate(-45deg);
+}*/
+
+
+
+/*a.Cart-click {
+ display: inline-block;
+ font-family: arial,sans-serif;
+ font-size: 11px;
+ color: rgb(205,216,228);
+ text-shadow: 0 -1px rgb(46,53,58);
+ text-decoration: none;
+ user-select: none;
+ line-height: 2em;
+ padding: 1px 1.2em;
+ outline: none;
+ border: 1px solid rgba(33,43,52,1);
+ border-radius: 3px;
+ background: rgb(81,92,102) linear-gradient(rgb(81,92,102), rgb(69,78,87));
+ box-shadow:
+         inset 0 1px rgba(101,114,126,1),
+         inset 0 0 1px rgba(140,150,170,.8),
+         0 1px rgb(83,94,104),
+         0 0 1px rgb(86,96,106);
+}
+a.Cart-click:active {
+ box-shadow:
+         inset 0 1px 3px rgba(0,10,20,.5),
+         0 1px rgb(83,94,104),
+         0 0 1px rgb(86,96,106);
+}
+a.Cart-click:focus:not(:active) {
+ border: 1px solid rgb(22,32,43);
+ border-bottom: 1px solid rgb(25,34,45);
+ background: rgb(53,61,71);
+ box-shadow:
+         inset 0 1px 3px rgba(0,10,20,.5),
+         0 1px rgb(83,94,104),
+         0 0 1px rgb(86,96,106);
+ pointer-events: none;
+}*/
+
+
+
+/*a.Cart-click {
+ color: #fff; !* цвет текста *!
+ text-decoration: none; !* убирать подчёркивание у ссылок *!
+ user-select: none; !* убирать выделение текста *!
+ background: url(../images/Cart2.png) no-repeat; !* фон кнопки *!
+ outline: none; !* убирать контур в Mozilla *!
+}
+!*a.knopka:hover {
+ background: rgb(232,95,76);
+} *!!* при наведении курсора мышки *!
+a.Cart-click:active {
+ background-position: 0 -30px;
+}*/ /* при нажатии */
+
+input[type="checkbox"] + span {
+ position: absolute; /* Абсолютное позиционирование */
+ left: 0; top: 0;
+ width: 100%; height: 100%;
+ background: url(../images/Cart2.png) no-repeat; /* Фоновый рисунок */
+ cursor: pointer; /* Курсор в виде руки */
+}
+input[type="checkbox"]:checked + span  	{
+ background-position: 0 -30px;
+}
+input[type="checkbox"]:disabled + span  	{
+ cursor: default;
+}
